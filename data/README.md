@@ -1,5 +1,25 @@
-The dataset is not stored in this repository due to its size.
+# Dataset
 
-Please download the Amazon Review dataset from Kaggle and place it inside:
+The dataset used in this project is not included in this repository because of its size.
 
+## Dataset Source
+
+The project uses the Amazon Product Reviews dataset.
+
+## Folder Structure
+
+Place the dataset files inside:
+
+```
 data/raw/
+```
+
+Expected files:
+
+```
+test_data.csv
+title_brand.csv
+train_data.csv
+```
+
+For Kaggle notebooks, the dataset will be loaded directly from the Kaggle input directory.
