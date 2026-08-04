@@ -1,7 +1,6 @@
 # Dataset
-data/raw/*
-data/processed/*
-
+data/*
+artifacts/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
@@ -9,12 +8,7 @@ data/processed/*
 private.md
 
 # Models
-models/*.pt
-models/*.pth
-models/*.bin
-models/*.pkl
 models/*
-!models/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
