@@ -16,6 +16,9 @@ def remove_html(text: str) -> str:
     if not isinstance(text, str):
         return ""
 
+    if "<" not in text or ">" not in text:
+        return text
+
     return BeautifulSoup(text, "html.parser").get_text(separator=" ")
 
 
@@ -69,7 +72,6 @@ def clean_text(text: str) -> str:
 
     text = remove_html(text)
     text = remove_urls(text)
-    text = normalize_whitespace(text)
     text = normalize_whitespace(text)
 
     return text
