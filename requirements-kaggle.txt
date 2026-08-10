@@ -1,0 +1,11 @@
+# Versions observed in the successful Kaggle Transformer runs.
+# Kaggle normally preinstalls these packages; use this file as a reproducibility
+# reference and avoid upgrading only one package in an active runtime.
+tensorflow==2.20.0
+keras==3.13.2
+keras-hub==0.26.0
+scikit-learn==1.6.1
+pandas
+numpy
+matplotlib
+seaborn
