@@ -10,6 +10,12 @@ Explore the complete data story, modelling pipeline, experiment comparison and f
 
 **[Amazon Review Intelligence](https://amazon-review-intelligence.ma-slri2128.chatgpt.site)**
 
+<p align="center">
+  <a href="https://amazon-review-intelligence.ma-slri2128.chatgpt.site">
+    <img src="presentation/public/og.png" alt="Amazon Review Intelligence — Transformer model comparison for one-to-five-star prediction" width="100%">
+  </a>
+</p>
+
 The site source lives in [`presentation/`](presentation/) and can be developed locally with Node.js 22 using `npm install` and `npm run dev`.
 
 ## Current status
