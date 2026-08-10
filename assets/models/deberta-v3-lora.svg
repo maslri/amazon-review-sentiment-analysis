@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">DeBERTa-v3 with LoRA model overview</title>
+  <desc id="desc">A visual summary of DeBERTa disentangled attention, rank 16 adapters, resumed Kaggle training, and validation results.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17102e"/><stop offset="1" stop-color="#34204f"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d48cff"/><stop offset="1" stop-color="#ff8dac"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1200" height="520" rx="30" fill="url(#bg)"/>
+  <circle cx="1100" cy="40" r="160" fill="#d48cff" opacity=".08"/>
+  <circle cx="1010" cy="520" r="220" fill="#ff8dac" opacity=".06"/>
+
+  <text x="64" y="72" fill="#fff7ff" font-family="Segoe UI,Arial,sans-serif" font-size="38" font-weight="700">DeBERTa-v3-base + LoRA</text>
+  <text x="64" y="106" fill="#c8b5d8" font-family="Segoe UI,Arial,sans-serif" font-size="18">Disentangled attention · rank 16 · timeout-safe resumed training</text>
+
+  <g filter="url(#shadow)">
+    <rect x="64" y="148" width="286" height="214" rx="20" fill="#251842" stroke="#60427d"/>
+    <text x="88" y="184" fill="#d48cff" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">TOKEN REPRESENTATION</text>
+    <rect x="88" y="211" width="238" height="52" rx="12" fill="#332150"/>
+    <text x="207" y="244" text-anchor="middle" fill="#f8edff" font-family="Segoe UI,Arial,sans-serif" font-size="18">Content vector</text>
+    <rect x="88" y="282" width="238" height="52" rx="12" fill="#332150"/>
+    <text x="207" y="315" text-anchor="middle" fill="#f8edff" font-family="Segoe UI,Arial,sans-serif" font-size="18">Position vector</text>
+  </g>
+
+  <path d="M368 255h58" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/><path d="M417 246l12 9-12 9" fill="none" stroke="#ff8dac" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="444" y="148" width="334" height="214" rx="20" fill="#251842" stroke="#60427d"/>
+    <text x="468" y="184" fill="#ff8dac" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">DISENTANGLED ATTENTION</text>
+    <path d="M494 235C550 196 612 196 670 235" fill="none" stroke="#d48cff" stroke-width="4"/>
+    <path d="M494 283C550 322 612 322 670 283" fill="none" stroke="#ff8dac" stroke-width="4"/>
+    <circle cx="494" cy="259" r="24" fill="#41275d" stroke="#d48cff"/><circle cx="582" cy="259" r="24" fill="#41275d" stroke="#ff8dac"/><circle cx="670" cy="259" r="24" fill="#41275d" stroke="#d48cff"/>
+    <text x="494" y="265" text-anchor="middle" fill="#fff7ff" font-family="Segoe UI,Arial,sans-serif" font-size="15">C</text><text x="582" y="265" text-anchor="middle" fill="#fff7ff" font-family="Segoe UI,Arial,sans-serif" font-size="15">P</text><text x="670" y="265" text-anchor="middle" fill="#fff7ff" font-family="Segoe UI,Arial,sans-serif" font-size="15">C</text>
+    <rect x="688" y="211" width="66" height="96" rx="12" fill="#40233f" stroke="#ff8dac"/>
+    <text x="721" y="249" text-anchor="middle" fill="#ffd6e1" font-family="Segoe UI,Arial,sans-serif" font-size="15">LoRA</text><text x="721" y="275" text-anchor="middle" fill="#ffd6e1" font-family="Segoe UI,Arial,sans-serif" font-size="15">r=16</text>
+  </g>
+
+  <path d="M796 255h58" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/><path d="M845 246l12 9-12 9" fill="none" stroke="#ff8dac" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="872" y="148" width="264" height="214" rx="20" fill="#251842" stroke="#60427d"/>
+    <text x="896" y="184" fill="#d48cff" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">RESUMED RUN</text>
+    <path d="M957 238a52 52 0 1 1-3 42" fill="none" stroke="#ff8dac" stroke-width="8" stroke-linecap="round"/>
+    <path d="M944 224l17 14-21 8" fill="#ff8dac"/>
+    <text x="1004" y="315" text-anchor="middle" fill="#f8edff" font-family="Segoe UI,Arial,sans-serif" font-size="17">Completed epoch 4</text>
+  </g>
+
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="64" y="424" fill="#c8b5d8" font-size="15">VALIDATION MICRO-F1</text><text x="64" y="468" fill="#fff7ff" font-size="34" font-weight="700">0.6757</text>
+    <text x="304" y="424" fill="#c8b5d8" font-size="15">MACRO-F1</text><text x="304" y="468" fill="#fff7ff" font-size="34" font-weight="700">0.6738</text>
+    <text x="500" y="424" fill="#c8b5d8" font-size="15">TRAINABLE</text><text x="500" y="468" fill="#d48cff" font-size="34" font-weight="700">2.22%</text>
+    <text x="740" y="424" fill="#c8b5d8" font-size="15">SEQUENCE LENGTH</text><text x="740" y="468" fill="#fff7ff" font-size="34" font-weight="700">256</text>
+    <rect x="976" y="420" width="160" height="50" rx="25" fill="#40233f" stroke="#ff8dac"/><text x="1056" y="451" text-anchor="middle" fill="#ffd6e1" font-size="16" font-weight="700">RESUMABLE</text>
+  </g>
+</svg>

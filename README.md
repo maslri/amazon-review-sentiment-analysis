@@ -4,6 +4,14 @@ End-to-end analysis and five-class rating prediction for Amazon electronics revi
 
 The official metric is **micro-averaged F1**. In this single-label multiclass problem, micro-F1 is equal to accuracy. Macro-F1 is also reported to expose performance differences between ratings.
 
+## Live project presentation
+
+Explore the complete data story, modelling pipeline, experiment comparison and final submission contract in the public presentation site:
+
+**[Amazon Review Intelligence](https://amazon-review-intelligence.ma-slri2128.chatgpt.site)**
+
+The site source lives in [`presentation/`](presentation/) and can be developed locally with Node.js 22 using `npm install` and `npm run dev`.
+
 ## Current status
 
 The complete modelling workflow is available:
@@ -86,15 +94,27 @@ Preprocessing components are fitted only on training data. Validation and test a
 
 The parameter-efficient baseline uses rank-16 KerasHub LoRA adapters, sequence length 256, AdamW, mixed precision, warmup, cosine decay and resumable checkpoints.
 
+<p align="center">
+  <img src="assets/models/roberta-lora.svg" alt="RoBERTa-base LoRA architecture and validation results" width="100%">
+</p>
+
 ### RoBERTa-base full + ordinal
 
 The full model updates the complete backbone. Its loss combines sparse categorical cross-entropy with an ordinal CDF-distance term so that the ordering `1 < 2 < 3 < 4 < 5` contributes to learning.
 
 Long reviews retain both their beginning and ending before tokenization. This helps preserve final recommendations or conclusions that would otherwise be lost by simple right-side truncation.
 
+<p align="center">
+  <img src="assets/models/roberta-full-ordinal.svg" alt="Full RoBERTa ordinal architecture and validation results" width="100%">
+</p>
+
 ### DeBERTa-v3-base with LoRA
 
 The DeBERTa run uses rank-16 adapters and the same balanced split. Its first Kaggle session exceeded the runtime limit during epoch 3. `BackupAndRestore` state was attached to a fresh session, and training resumed through epoch 4 without restarting the experiment.
+
+<p align="center">
+  <img src="assets/models/deberta-v3-lora.svg" alt="DeBERTa-v3 LoRA architecture and validation results" width="100%">
+</p>
 
 The executed continuation is stored at:
 
@@ -174,6 +194,7 @@ The row order remains identical to the original test CSV, and the file is writte
 
 ```text
 .
+├── assets/models/         # Model architecture and result illustrations
 ├── data/                  # Raw and generated CSVs are ignored
 ├── docs/                  # Preprocessing decisions and validation notes
 ├── notebooks/

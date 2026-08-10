@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">RoBERTa full fine-tuning with ordinal loss overview</title>
+  <desc id="desc">A visual summary of head and tail review evidence, full RoBERTa fine-tuning, hybrid ordinal loss, and the best validation results.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071c1b"/><stop offset="1" stop-color="#133b35"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe07a"/><stop offset="1" stop-color="#55e6b0"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1200" height="520" rx="30" fill="url(#bg)"/>
+  <circle cx="1100" cy="30" r="150" fill="#ffe07a" opacity=".08"/><circle cx="1010" cy="520" r="220" fill="#55e6b0" opacity=".06"/>
+
+  <text x="64" y="72" fill="#f7fff9" font-family="Segoe UI,Arial,sans-serif" font-size="38" font-weight="700">RoBERTa-base Full + Ordinal</text>
+  <text x="64" y="106" fill="#a8c9c0" font-family="Segoe UI,Arial,sans-serif" font-size="18">Full-backbone adaptation · head/tail evidence · hybrid ordered-class learning</text>
+
+  <g filter="url(#shadow)">
+    <rect x="64" y="148" width="286" height="214" rx="20" fill="#102e2b" stroke="#326158"/>
+    <text x="88" y="184" fill="#ffe07a" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">EVIDENCE SELECTION</text>
+    <rect x="88" y="210" width="238" height="46" rx="11" fill="#183b36"/><text x="207" y="239" text-anchor="middle" fill="#f7fff9" font-family="Segoe UI,Arial,sans-serif" font-size="17">Review head · 96 words</text>
+    <path d="M112 278h190" stroke="#4f7a71" stroke-width="3" stroke-dasharray="8 8"/>
+    <rect x="88" y="301" width="238" height="46" rx="11" fill="#183b36"/><text x="207" y="330" text-anchor="middle" fill="#f7fff9" font-family="Segoe UI,Arial,sans-serif" font-size="17">Review tail · 48 words</text>
+  </g>
+
+  <path d="M368 255h58" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/><path d="M417 246l12 9-12 9" fill="none" stroke="#55e6b0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="444" y="148" width="334" height="214" rx="20" fill="#102e2b" stroke="#326158"/>
+    <text x="468" y="184" fill="#55e6b0" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">FULL BACKBONE</text>
+    <g fill="#183b36" stroke="#3d7469">
+      <rect x="468" y="208" width="286" height="34" rx="9"/><rect x="468" y="252" width="286" height="34" rx="9"/><rect x="468" y="296" width="286" height="34" rx="9"/>
+    </g>
+    <g font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#dff9ef">
+      <text x="611" y="231" text-anchor="middle">Transformer layers 1–4</text><text x="611" y="275" text-anchor="middle">Transformer layers 5–8</text><text x="611" y="319" text-anchor="middle">Transformer layers 9–12</text>
+    </g>
+    <text x="742" y="184" text-anchor="end" fill="#ffe07a" font-family="Segoe UI,Arial,sans-serif" font-size="13">100% TRAINABLE</text>
+  </g>
+
+  <path d="M796 255h58" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/><path d="M845 246l12 9-12 9" fill="none" stroke="#55e6b0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="872" y="148" width="264" height="214" rx="20" fill="#102e2b" stroke="#326158"/>
+    <text x="896" y="184" fill="#ffe07a" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.4">HYBRID LOSS</text>
+    <text x="1004" y="235" text-anchor="middle" fill="#f7fff9" font-family="Segoe UI,Arial,sans-serif" font-size="18">Cross-entropy</text>
+    <text x="1004" y="276" text-anchor="middle" fill="#55e6b0" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">+</text>
+    <text x="1004" y="312" text-anchor="middle" fill="#f7fff9" font-family="Segoe UI,Arial,sans-serif" font-size="18">0.25 × Ordinal CDF</text>
+    <path d="M924 335h160" stroke="#ffe07a" stroke-width="3"/>
+  </g>
+
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="64" y="424" fill="#a8c9c0" font-size="15">VALIDATION MICRO-F1</text><text x="64" y="468" fill="#f7fff9" font-size="34" font-weight="700">0.6948</text>
+    <text x="304" y="424" fill="#a8c9c0" font-size="15">MACRO-F1</text><text x="304" y="468" fill="#f7fff9" font-size="34" font-weight="700">0.6960</text>
+    <text x="500" y="424" fill="#a8c9c0" font-size="15">TRAINABLE</text><text x="500" y="468" fill="#ffe07a" font-size="34" font-weight="700">100%</text>
+    <text x="700" y="424" fill="#a8c9c0" font-size="15">PARAMETERS UPDATED</text><text x="700" y="468" fill="#f7fff9" font-size="34" font-weight="700">124.65M</text>
+    <rect x="1004" y="420" width="132" height="50" rx="25" fill="#284b2f" stroke="#ffe07a"/><text x="1070" y="451" text-anchor="middle" fill="#fff0a8" font-size="16" font-weight="700">BEST F1</text>
+  </g>
+</svg>
